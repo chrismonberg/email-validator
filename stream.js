@@ -1,10 +1,10 @@
 var streamCSV = require("node-stream-csv");
 var verifier = require('email-verify');
 
+//should update to work with boombot and accept a stream or email address
+
 streamCSV("MOCK_DATA.csv", function(user) {
     //console.log(user.email);
-	// var list = user.email.length;
-	// console.log (list);
 	verifier.verify( user.email, function( info, err ){
   		if( err ) console.log(err);
   		else{
